@@ -8,6 +8,11 @@ public class TaskManager : MonoBehaviour
     public GameObject taskNotificationPrefab; // 2D notification prefab that will appear over elements
     public float minTaskInterval = 5f;   // Minimum time between task generations
     public float maxTaskInterval = 15f;  // Maximum time between task generations
+    public int baseTasksPerDay = 3;      // Base number of tasks generated per day
+
+    private int currentDay = 1;          // Track the current day
+    private int tasksGeneratedToday = 0; // Track tasks generated on the current day
+    private int tasksToComplete = 0;     // Tasks needed to complete the day
 
     // Possible task templates with placeholders
     private List<string> taskTemplates = new List<string>()
@@ -15,13 +20,13 @@ public class TaskManager : MonoBehaviour
         "Fix {quantity} sections of {target}",
         "Repair the {target} at {detail}",
         "Inspect {quantity} units of {target}",
-        "Provide healthcare to {quantity} people at {detail}",
         "Clean up {quantity} tons of waste from {target}",
         "Upgrade {target} to level {quantity}",
         "Install {quantity} solar panels on {target}",
         "Resolve traffic congestion at {detail}",
         "Restock {quantity} supplies at {target}",
-        "Conduct a safety inspection at {target}"
+        "Conduct a safety inspection at {target}",
+        "Inspect The Dome's air quality"
     };
 
     // Possible targets
@@ -30,7 +35,6 @@ public class TaskManager : MonoBehaviour
         "road",
         "building",
         "water source",
-        "hospital",
         "school",
         "park",
         "power plant",
@@ -56,56 +60,72 @@ public class TaskManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(GenerateRandomTasks());
+        StartCoroutine(DayCycle());
     }
 
-    // Randomly generates tasks at intervals
-    IEnumerator GenerateRandomTasks()
+    // Day cycle coroutine
+    IEnumerator DayCycle()
     {
         while (true)
         {
-            // Wait for a random time before generating the next task
-            float taskInterval = Random.Range(minTaskInterval, maxTaskInterval);
-            Debug.Log($"Next task in {taskInterval} seconds");
+            Debug.Log($"Day {currentDay} started.");
 
-            for (float countdown = taskInterval; countdown > 0; countdown--)
+            // Calculate how many tasks need to be generated today
+            tasksToComplete = baseTasksPerDay + (currentDay - 1); // Increase tasks with each day
+            tasksGeneratedToday = 0;
+
+            Debug.Log($"Tasks to complete today: {tasksToComplete}");
+
+            // Generate tasks for the day
+            while (tasksGeneratedToday < tasksToComplete)
             {
-                Debug.Log($"Time until next task: {countdown} seconds");
-                yield return new WaitForSeconds(1f);
+                float taskInterval = Random.Range(minTaskInterval, maxTaskInterval);
+
+                Debug.Log($"Next task in {taskInterval} seconds");
+
+                // Countdown for task generation
+                for (float countdown = taskInterval; countdown > 0; countdown--)
+                {
+                    Debug.Log($"Time until next task: {countdown} seconds");
+                    yield return new WaitForSeconds(1f);
+                }
+
+                // Generate the task
+                CityTask newTask = GenerateTask();
+                GameObject targetElement = GetRandomCityElement(newTask.target);
+                if (targetElement != null)
+                {
+                    CreateTaskNotification(targetElement, newTask);
+                }
+
+                tasksGeneratedToday++;
+                Debug.Log($"Task Generated: {newTask.description}");
+                Debug.Log($"Tasks remaining today: {tasksToComplete - tasksGeneratedToday}");
             }
 
-            // Generate a random task
-            CityTask newTask = GenerateTask();
+            // End of the day
+            Debug.Log($"Day {currentDay} completed!");
 
-            // Assign the task to a random city element
-            GameObject targetElement = GetRandomCityElement(newTask.target);
-            if (targetElement != null)
-            {
-                // Display the task notification over the target element
-                CreateTaskNotification(targetElement, newTask);
-            }
-
-            Debug.Log($"Task Generated: {newTask.description}");
+            // Wait for a new day (adjust the wait time if needed)
+            yield return new WaitForSeconds(10f);
+            
+            // Move to the next day
+            currentDay++;
         }
     }
 
     // Generates a randomized task
     CityTask GenerateTask()
     {
-        // Select a random template
         string template = taskTemplates[Random.Range(0, taskTemplates.Count)];
-
-        // Randomize target, quantity, and detail
         string target = targets[Random.Range(0, targets.Count)];
         int quantity = Random.Range(1, 5); // Adjust range as needed
         string detail = details[Random.Range(0, details.Count)];
 
-        // Replace placeholders in the template
         string description = template.Replace("{quantity}", quantity.ToString())
                                      .Replace("{target}", target)
                                      .Replace("{detail}", detail);
 
-        // Create and return the new task
         return new CityTask(description, target, quantity, detail);
     }
 
@@ -114,7 +134,6 @@ public class TaskManager : MonoBehaviour
     {
         List<GameObject> matchingElements = new List<GameObject>();
 
-        // Assuming each city element has a tag matching its type
         foreach (GameObject element in cityElements)
         {
             if (element.CompareTag(targetType))
@@ -130,28 +149,21 @@ public class TaskManager : MonoBehaviour
         }
         else
         {
-            return null; // No matching element found
+            return null;
         }
     }
 
     // Creates a task notification over the target element
     void CreateTaskNotification(GameObject targetElement, CityTask task)
     {
-        // Instantiate the notification prefab
         GameObject notification = Instantiate(taskNotificationPrefab);
-
-        // Set the notification as a child of the target element
         notification.transform.SetParent(targetElement.transform, false);
-
-        // Position the notification above the target element
         notification.transform.localPosition = new Vector3(0, 5f, 0); // Adjust Y value as needed
-
-        // Update the notification text with the task description
         notification.GetComponentInChildren<UnityEngine.UI.Text>().text = task.description;
     }
 }
 
-// Custom task class to avoid conflict with Unity's Task class
+// Custom task class
 public class CityTask
 {
     public string description;
