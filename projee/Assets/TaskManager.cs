@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class TaskManager : MonoBehaviour
 {
-    // List of city elements to assign tasks to
     public List<GameObject> cityElements; // Assign roads, buildings, healthcare facilities, water sources, etc.
     public GameObject taskNotificationPrefab; // 2D notification prefab that will appear over elements
     public float minTaskInterval = 5f;   // Minimum time between task generations
@@ -67,10 +66,16 @@ public class TaskManager : MonoBehaviour
         {
             // Wait for a random time before generating the next task
             float taskInterval = Random.Range(minTaskInterval, maxTaskInterval);
-            yield return new WaitForSeconds(taskInterval);
+            Debug.Log($"Next task in {taskInterval} seconds");
+
+            for (float countdown = taskInterval; countdown > 0; countdown--)
+            {
+                Debug.Log($"Time until next task: {countdown} seconds");
+                yield return new WaitForSeconds(1f);
+            }
 
             // Generate a random task
-            Task newTask = GenerateTask();
+            CityTask newTask = GenerateTask();
 
             // Assign the task to a random city element
             GameObject targetElement = GetRandomCityElement(newTask.target);
@@ -79,18 +84,20 @@ public class TaskManager : MonoBehaviour
                 // Display the task notification over the target element
                 CreateTaskNotification(targetElement, newTask);
             }
+
+            Debug.Log($"Task Generated: {newTask.description}");
         }
     }
 
     // Generates a randomized task
-    Task GenerateTask()
+    CityTask GenerateTask()
     {
         // Select a random template
         string template = taskTemplates[Random.Range(0, taskTemplates.Count)];
 
         // Randomize target, quantity, and detail
         string target = targets[Random.Range(0, targets.Count)];
-        int quantity = Random.Range(1, 100); // Adjust range as needed
+        int quantity = Random.Range(1, 5); // Adjust range as needed
         string detail = details[Random.Range(0, details.Count)];
 
         // Replace placeholders in the template
@@ -99,7 +106,7 @@ public class TaskManager : MonoBehaviour
                                      .Replace("{detail}", detail);
 
         // Create and return the new task
-        return new Task(description, target, quantity, detail);
+        return new CityTask(description, target, quantity, detail);
     }
 
     // Finds a random city element matching the task target
@@ -128,7 +135,7 @@ public class TaskManager : MonoBehaviour
     }
 
     // Creates a task notification over the target element
-    void CreateTaskNotification(GameObject targetElement, Task task)
+    void CreateTaskNotification(GameObject targetElement, CityTask task)
     {
         // Instantiate the notification prefab
         GameObject notification = Instantiate(taskNotificationPrefab);
@@ -141,5 +148,22 @@ public class TaskManager : MonoBehaviour
 
         // Update the notification text with the task description
         notification.GetComponentInChildren<UnityEngine.UI.Text>().text = task.description;
+    }
+}
+
+// Custom task class to avoid conflict with Unity's Task class
+public class CityTask
+{
+    public string description;
+    public string target;
+    public int quantity;
+    public string detail;
+
+    public CityTask(string description, string target, int quantity, string detail)
+    {
+        this.description = description;
+        this.target = target;
+        this.quantity = quantity;
+        this.detail = detail;
     }
 }
