@@ -374,6 +374,7 @@
 "Assets/Sketchfab For Unity/Scripts/SketchfabUI.cs"
 "Assets/Task.cs"
 "Assets/TaskManager.cs"
+"Assets/TaskObject.cs"
 "Assets/TreeFall.cs"
 "Assets/watersim.cs"
 -langversion:9.0

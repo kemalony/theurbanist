@@ -20,10 +20,13 @@ public class buttonsetup : MonoBehaviour
     }
 
     // Function to activate the GameObject
-    public void fps()
+    public void taskk()
     {
-        maincamera.SetActive(false);  // Deactivates the GameObject
-        fpscamera.SetActive(true);
+        taskpanel.SetActive(true);
+
+    }
+    public void closetask()
+    {
         taskpanel.SetActive(false);
 
     }
