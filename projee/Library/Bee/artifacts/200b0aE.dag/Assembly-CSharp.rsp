@@ -361,6 +361,7 @@
 "Assets/BottleSimulation.cs"
 "Assets/buttonsetup.cs"
 "Assets/ClickableObject.cs"
+"Assets/DynamicWayFollower.cs"
 "Assets/Sketchfab For Unity/Scripts/AssetBrowser/SketchfabBrowserManager.cs"
 "Assets/Sketchfab For Unity/Scripts/AssetBrowser/SketchfabBrowserWindow.cs"
 "Assets/Sketchfab For Unity/Scripts/AssetBrowser/SketchfabModelWindow.cs"

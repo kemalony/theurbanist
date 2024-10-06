@@ -15,7 +15,7 @@ public class TaskManager : MonoBehaviour
     public float minTaskInterval = 0.2f;   // Minimum time between task generations
     public float maxTaskInterval = 1f;  // Maximum time between task generations
     public int baseTasksPerDay = 3;      // Base number of tasks generated per day
-    
+    public Text currentdayy; 
     private int currentDay = 1; // Current day tracker
     private int tasksGeneratedToday = 0; // Number of tasks generated for the current day
     private int tasksToComplete = 0;     // Tasks needed to complete the day
@@ -32,7 +32,7 @@ public class TaskManager : MonoBehaviour
     // Possible targets
     private List<string> targets = new List<string>()
     {
-        "road" //"building", "water source", "stadium", "factory", "windmill"
+        "road"//"building", "water source", "stadium", "factory", "windmill"
     };
 
     // Possible details (could be locations or specific names)
@@ -43,6 +43,8 @@ public class TaskManager : MonoBehaviour
 
     void Start()
     {
+        currentdayy.text = currentDay + "  ";
+
         StartCoroutine(DayCycle());
     }
 
@@ -66,6 +68,7 @@ public class TaskManager : MonoBehaviour
             }
 
             Debug.Log($"All tasks for day {currentDay} generated.");
+            currentdayy.text = "Day "+ currentDay + "  ";
             // Wait for a new day
             yield return new WaitForSeconds(10f);
             currentDay++;
@@ -167,7 +170,7 @@ public class TaskManager : MonoBehaviour
 // Spawns repair items (e.g., repair tools) on tagged objects
 void SpawnRepairItems(CityTask task)
 {
-    GameObject[] targetObjects = GameObject.FindGameObjectsWithTag("water source");
+    GameObject[] targetObjects = GameObject.FindGameObjectsWithTag("road");
 
     if (targetObjects.Length == 0)
     {
@@ -212,6 +215,8 @@ public void CheckTaskCompletion(CityTask task)
                 return "fabrika"; // Use the tag "fabrika"
             case "windmill":
                 return "windmill"; // Use the tag "windmill"
+            case "air capsule":
+                return "air";
             default:
                 Debug.LogWarning($"No tag mapped for target: {target}");
                 return "";
