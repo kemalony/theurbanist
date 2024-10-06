@@ -22,7 +22,11 @@ AssetImportWorker1
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
+<<<<<<< HEAD
 62673
+=======
+49950
+>>>>>>> main
 Successfully changed project path to: /Users/sahinonyurt/okuyanariteknofest/theurbanist/projee
 /Users/sahinonyurt/okuyanariteknofest/theurbanist/projee
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -56,11 +60,19 @@ Successfully changed project path to: /Users/sahinonyurt/okuyanariteknofest/theu
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
+<<<<<<< HEAD
 Player connection [8422998336] Host "[IP] 192.168.1.12 [Port] 0 [Flags] 2 [Guid] 1165531760 [EditorId] 1165531760 [Version] 1048832 [Id] OSXEditor(0,Sahin-MacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
 Player connection [8422998336] Host "[IP] 192.168.1.12 [Port] 0 [Flags] 2 [Guid] 1165531760 [EditorId] 1165531760 [Version] 1048832 [Id] OSXEditor(0,Sahin-MacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 Refreshing native plugins compatible for Editor in 10.72 ms, found 2 plugins.
+=======
+Player connection [8422998336] Host "[IP] 192.168.35.82 [Port] 0 [Flags] 2 [Guid] 830121341 [EditorId] 830121341 [Version] 1048832 [Id] OSXEditor(0,Sahin-MacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [8422998336] Host "[IP] 192.168.35.82 [Port] 0 [Flags] 2 [Guid] 830121341 [EditorId] 830121341 [Version] 1048832 [Id] OSXEditor(0,Sahin-MacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 10.99 ms, found 2 plugins.
+>>>>>>> main
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.7f1 (b16b3b16c7a0)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2022.3.7f1/Unity.app/Contents/Resources/UnitySubsystems
@@ -75,11 +87,16 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2022.3.7f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2022.3.7f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/2022.3.7f1/Unity.app/Contents/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56930
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56515
+>>>>>>> main
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/2022.3.7f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/2022.3.7f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+<<<<<<< HEAD
 Registered in 0.001005 seconds.
 - Loaded All Assemblies, in  0.239 seconds
 Native extension for OSXStandalone target not found
@@ -88,11 +105,22 @@ Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  0.143 seconds
 Domain Reload Profiling: 382ms
 	BeginReloadAssembly (88ms)
+=======
+Registered in 0.003372 seconds.
+- Loaded All Assemblies, in  0.260 seconds
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.157 seconds
+Domain Reload Profiling: 417ms
+	BeginReloadAssembly (95ms)
+>>>>>>> main
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (0ms)
+<<<<<<< HEAD
 	RebuildCommonClasses (22ms)
 	RebuildNativeTypeToScriptingClass (7ms)
 	initialDomainReloadingComplete (28ms)
@@ -115,6 +143,30 @@ Domain Reload Profiling: 382ms
 			BeforeProcessingInitializeOnLoad (1ms)
 			ProcessInitializeOnLoadAttributes (72ms)
 			ProcessInitializeOnLoadMethodAttributes (25ms)
+=======
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (34ms)
+	LoadAllAssembliesAndSetupDomain (99ms)
+		LoadAssemblies (95ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (97ms)
+			TypeCache.Refresh (96ms)
+				TypeCache.ScanAssembly (86ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (158ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (116ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (1ms)
+			ProcessInitializeOnLoadAttributes (80ms)
+			ProcessInitializeOnLoadMethodAttributes (27ms)
+>>>>>>> main
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -124,8 +176,13 @@ Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/sahinonyurt/okuyanariteknofest/theurbanist/projee/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/sahinonyurt/okuyanariteknofest/theurbanist/projee/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+<<<<<<< HEAD
 - Loaded All Assemblies, in  0.420 seconds
 Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
+=======
+- Loaded All Assemblies, in  0.460 seconds
+Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
+>>>>>>> main
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -133,13 +190,20 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Finished resetting the current domain, in  0.415 seconds
 Domain Reload Profiling: 836ms
 	BeginReloadAssembly (73ms)
+=======
+- Finished resetting the current domain, in  0.412 seconds
+Domain Reload Profiling: 872ms
+	BeginReloadAssembly (83ms)
+>>>>>>> main
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 		CreateAndSetChildDomain (17ms)
 	RebuildCommonClasses (22ms)
 	RebuildNativeTypeToScriptingClass (7ms)
@@ -153,6 +217,208 @@ Domain Reload Profiling: 836ms
 			ScanForSourceGeneratedMonoScriptInfo (7ms)
 			ResolveRequiredComponents (3ms)
 	FinalizeReload (416ms)
+=======
+		CreateAndSetChildDomain (18ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (22ms)
+	LoadAllAssembliesAndSetupDomain (324ms)
+		LoadAssemblies (242ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (119ms)
+			TypeCache.Refresh (109ms)
+				TypeCache.ScanAssembly (95ms)
+			ScanForSourceGeneratedMonoScriptInfo (7ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (412ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (325ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (29ms)
+			ProcessInitializeOnLoadAttributes (277ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
+Launching external process: /Applications/Unity/Hub/Editor/2022.3.7f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.25 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3215 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 38 unused Assets / (52.3 KB). Loaded Objects now: 3686.
+Memory consumption went from 128.5 MB to 128.4 MB.
+Total: 2.735875 ms (FindLiveObjects: 0.106708 ms CreateObjectMapping: 0.047875 ms MarkObjects: 2.494791 ms  DeleteObjects: 0.085791 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 111138.859993 seconds.
+  path: Assets/Bas╠ğl─▒ks─▒z79_20241006112925.PNG
+  artifactKey: Guid(e35cd8d73feb7ea4ea661939f9e813cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bas╠ğl─▒ks─▒z79_20241006112925.PNG using Guid(e35cd8d73feb7ea4ea661939f9e813cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a10a9f5a198dbea84b6e69eeda165bfc') in 0.041804 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000102 seconds.
+  path: Assets/Başlıksız79_20241006162133.PNG
+  artifactKey: Guid(a0a652c44203c6149b042d832b5bfddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Başlıksız79_20241006162133.PNG using Guid(a0a652c44203c6149b042d832b5bfddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dac1cce50bec022626c527f2d72e24c7') in 0.054452 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/traffic.prefab
+  artifactKey: Guid(649691768d66c4e25bb7e1569aa82619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traffic.prefab using Guid(649691768d66c4e25bb7e1569aa82619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddb907f93c5528249c2b477f23fd5383') in 0.092747 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 102
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/aircapsule.prefab
+  artifactKey: Guid(54eda896f4ff949dcafb6f239a4978c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/aircapsule.prefab using Guid(54eda896f4ff949dcafb6f239a4978c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ce79d8c2a4aa38b8e386a26d2b1e6c5') in 0.019242 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 63
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/trash_can_01.prefab
+  artifactKey: Guid(5cec22880a3cd4708961ab32c87e285b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/trash_can_01.prefab using Guid(5cec22880a3cd4708961ab32c87e285b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '900cf7f6f229144f7896b3bd507a591c') in 0.016147 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000153 seconds.
+  path: Assets/Adsız tasarım-4.png
+  artifactKey: Guid(536e6f63a6e654d01b47dec2d118e5bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Adsız tasarım-4.png using Guid(536e6f63a6e654d01b47dec2d118e5bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd12f0d7ef92c97beeea5683b035f3cd0') in 0.006015 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 16.681301 seconds.
+  path: Assets/3D Laboratory Environment with Appratus/Materials/Laboratory03_Glass_BaseMap.mat
+  artifactKey: Guid(62dad06c47d1d1a448901a67f077f0b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Laboratory Environment with Appratus/Materials/Laboratory03_Glass_BaseMap.mat using Guid(62dad06c47d1d1a448901a67f077f0b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfd7f8a9e7a787c76922f4c6440a38eb') in 0.080674 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/3D Laboratory Environment with Appratus/Materials/Liquid.mat
+  artifactKey: Guid(94c11be5b5b74c440a5c2fc75dc65d88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Laboratory Environment with Appratus/Materials/Liquid.mat using Guid(94c11be5b5b74c440a5c2fc75dc65d88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27e67c4df8758ee912f56c080a26b216') in 0.021237 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000114 seconds.
+  path: Assets/3D Laboratory Environment with Appratus/Materials/water.mat
+  artifactKey: Guid(7edb3177958782c49aa980429ae5fbf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Laboratory Environment with Appratus/Materials/water.mat using Guid(7edb3177958782c49aa980429ae5fbf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '559e5cb587e74df66412a97450b2d619') in 0.014734 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/3D Laboratory Environment with Appratus/Materials/Liquid 3.mat
+  artifactKey: Guid(65529ac748f009d4dbdee8d40e2e6402) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Laboratory Environment with Appratus/Materials/Liquid 3.mat using Guid(65529ac748f009d4dbdee8d40e2e6402) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b2e06fe0b058762dd75a9340f1ff98c') in 0.004102 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000112 seconds.
+  path: Assets/3D Laboratory Environment with Appratus/Materials/New Material.mat
+  artifactKey: Guid(2bece4266c1175a4faabdb2e7063f6fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Laboratory Environment with Appratus/Materials/New Material.mat using Guid(2bece4266c1175a4faabdb2e7063f6fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47485dede28db2c6fe63403b9475f659') in 0.003364 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000101 seconds.
+  path: Assets/3D Laboratory Environment with Appratus/Materials/Laboratory03_Others_BaseMap.mat
+  artifactKey: Guid(935190269a0097e468613dae1055aa8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Laboratory Environment with Appratus/Materials/Laboratory03_Others_BaseMap.mat using Guid(935190269a0097e468613dae1055aa8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54fa12a51e2f02893cce1f28ce177769') in 0.052350 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 2.58 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 3736.
+Memory consumption went from 79.8 MB to 79.8 MB.
+Total: 3.735083 ms (FindLiveObjects: 0.126833 ms CreateObjectMapping: 0.049667 ms MarkObjects: 3.551875 ms  DeleteObjects: 0.006333 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x17fcbb000 may have been prematurely finalized
+Symbol file LoadedFromMemory doesn't match image /Users/sahinonyurt/okuyanariteknofest/theurbanist/projee/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/sahinonyurt/okuyanariteknofest/theurbanist/projee/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.317 seconds
+Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.756 seconds
+Domain Reload Profiling: 1073ms
+	BeginReloadAssembly (103ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (39ms)
+	RebuildCommonClasses (21ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (14ms)
+	LoadAllAssembliesAndSetupDomain (172ms)
+		LoadAssemblies (197ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (10ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (756ms)
+>>>>>>> main
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
 		SetupLoadedEditorAssemblies (329ms)
@@ -166,6 +432,7 @@ Domain Reload Profiling: 836ms
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
+<<<<<<< HEAD
 		AwakeInstancesAfterBackupRestoration (2ms)
 Launching external process: /Applications/Unity/Hub/Editor/2022.3.7f1/Unity.app/Contents/Tools/UnityShaderCompiler
 Launched and connected shader compiler UnityShaderCompiler after 0.04 seconds
@@ -2832,6 +3099,15 @@ Unloading 3204 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 24 unused Assets / (31.4 KB). Loaded Objects now: 3838.
 Memory consumption went from 427.3 MB to 427.2 MB.
 Total: 3.786083 ms (FindLiveObjects: 0.147208 ms CreateObjectMapping: 0.080125 ms MarkObjects: 3.505083 ms  DeleteObjects: 0.053042 ms)
+=======
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3204 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 24 unused Assets / (31.3 KB). Loaded Objects now: 3738.
+Memory consumption went from 137.8 MB to 137.7 MB.
+Total: 4.062209 ms (FindLiveObjects: 0.260334 ms CreateObjectMapping: 0.100375 ms MarkObjects: 3.583333 ms  DeleteObjects: 0.117375 ms)
+>>>>>>> main
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):

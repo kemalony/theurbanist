@@ -15,6 +15,7 @@ TagManager:
   - stadyum
   - fabrika
   - air
+  - araba
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class buttonsetup : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class buttonsetup : MonoBehaviour
       public GameObject startstuff;
       public GameObject gameuistuff;
       public GameObject taskpanel;
+    private Slider Score;
+    private Slider Memnun;
+    private Slider Para;
+    private Slider Some;
     // Function to deactivate the GameObject
     public void start()
     {
@@ -17,6 +22,14 @@ public class buttonsetup : MonoBehaviour
         maincamera.SetActive(true);
         startstuff.SetActive(false);
         gameuistuff.SetActive(true);
+                // Find the sliders in the scene by their names
+        Score = GameObject.Find("Score").GetComponent<Slider>();
+        Memnun = GameObject.Find("Memnun").GetComponent<Slider>();
+        Para = GameObject.Find("Para").GetComponent<Slider>();
+        Some = GameObject.Find("Dome").GetComponent<Slider>();
+
+        // Load saved slider values from PlayerPrefs
+        LoadSliderValues();
     }
 
     // Function to activate the GameObject
@@ -29,5 +42,13 @@ public class buttonsetup : MonoBehaviour
     {
         taskpanel.SetActive(false);
 
+    }
+      private void LoadSliderValues()
+    {
+        // Check if the keys exist before loading
+        if (PlayerPrefs.HasKey("Score")) Score.value = PlayerPrefs.GetFloat("Score");
+        if (PlayerPrefs.HasKey("Memnun")) Memnun.value = PlayerPrefs.GetFloat("Memnun");
+        if (PlayerPrefs.HasKey("Para")) Para.value = PlayerPrefs.GetFloat("Para");
+        if (PlayerPrefs.HasKey("Some")) Some.value = PlayerPrefs.GetFloat("Some");
     }
 }
