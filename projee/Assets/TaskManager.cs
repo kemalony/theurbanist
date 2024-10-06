@@ -20,7 +20,13 @@ public class TaskManager : MonoBehaviour
     private int tasksGeneratedToday = 0; // Number of tasks generated for the current day
     private int tasksToComplete = 0;     // Tasks needed to complete the day
     private List<CityTask> activeTasks = new List<CityTask>(); // List of currently active tasks
+<<<<<<< Updated upstream
     public Slider Para;
+=======
+    public GameObject goodEnding;
+    public GameObject badEnding;
+
+>>>>>>> Stashed changes
     // Task templates with placeholders
     private List<string> taskTemplates = new List<string>()
     {
@@ -75,6 +81,16 @@ public class TaskManager : MonoBehaviour
             PlayerPrefs.SetFloat("Para", Para.value);
 
             currentDay++;
+            if(currentDay == 15)
+            {
+                if(PlayerPrefs.GetFloat("Score")>=80)
+                {
+                    goodEnding.SetActive(true);
+                }else
+                {
+                    badEnding.SetActive(true);
+                }
+            }
         }
     }
 
