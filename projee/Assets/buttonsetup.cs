@@ -5,16 +5,20 @@ using UnityEngine.UI;
 
 public class buttonsetup : MonoBehaviour
 {
-      public GameObject startcamera;
-      public GameObject maincamera;
-      public GameObject fpscamera;
-      public GameObject startstuff;
-      public GameObject gameuistuff;
-      public GameObject taskpanel;
+    public GameObject startcamera;
+    public GameObject maincamera;
+    public GameObject fpscamera;
+    public GameObject startstuff;
+    public GameObject gameuistuff;
+    public GameObject taskpanel;
+    public GameObject stats;
+    public Text stattext;
+
     private Slider Score;
     private Slider Memnun;
     private Slider Para;
     private Slider Some;
+
     // Function to deactivate the GameObject
     public void start()
     {
@@ -22,7 +26,8 @@ public class buttonsetup : MonoBehaviour
         maincamera.SetActive(true);
         startstuff.SetActive(false);
         gameuistuff.SetActive(true);
-                // Find the sliders in the scene by their names
+
+        // Find the sliders in the scene by their names
         Score = GameObject.Find("Score").GetComponent<Slider>();
         Memnun = GameObject.Find("Memnun").GetComponent<Slider>();
         Para = GameObject.Find("Para").GetComponent<Slider>();
@@ -36,19 +41,41 @@ public class buttonsetup : MonoBehaviour
     public void taskk()
     {
         taskpanel.SetActive(true);
-
     }
+
     public void closetask()
     {
         taskpanel.SetActive(false);
-
     }
-      private void LoadSliderValues()
+
+    public void openstat()
+    {
+        stats.SetActive(true);
+    }
+
+    public void closestat()
+    {
+        stats.SetActive(false);
+    }
+
+    private void LoadSliderValues()
     {
         // Check if the keys exist before loading
         if (PlayerPrefs.HasKey("Score")) Score.value = PlayerPrefs.GetFloat("Score");
         if (PlayerPrefs.HasKey("Memnun")) Memnun.value = PlayerPrefs.GetFloat("Memnun");
         if (PlayerPrefs.HasKey("Para")) Para.value = PlayerPrefs.GetFloat("Para");
         if (PlayerPrefs.HasKey("Some")) Some.value = PlayerPrefs.GetFloat("Some");
+
+        // Update the stat text with the loaded values
+        UpdateStatText();
+    }
+
+    private void UpdateStatText()
+    {
+        // Format the slider values into a string and set it to the stattext
+        stattext.text = $"Score: {Score.value}\n" +
+                        $"Memnun: {Memnun.value}\n" +
+                        $"Para: {Para.value}\n" +
+                        $"Some: {Some.value}";
     }
 }

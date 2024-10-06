@@ -20,7 +20,7 @@ public class TaskManager : MonoBehaviour
     private int tasksGeneratedToday = 0; // Number of tasks generated for the current day
     private int tasksToComplete = 0;     // Tasks needed to complete the day
     private List<CityTask> activeTasks = new List<CityTask>(); // List of currently active tasks
-
+    public Slider Para;
     // Task templates with placeholders
     private List<string> taskTemplates = new List<string>()
     {
@@ -71,6 +71,9 @@ public class TaskManager : MonoBehaviour
             currentdayy.text = "Day "+ currentDay + "  ";
             // Wait for a new day
             yield return new WaitForSeconds(10f);
+            Para.value += 20;
+            PlayerPrefs.SetFloat("Para", Para.value);
+
             currentDay++;
         }
     }
