@@ -1,0 +1,11 @@
+Model Information:
+* title:	Simple Tessellation glass dome
+* source:	https://sketchfab.com/3d-models/simple-tessellation-glass-dome-8baa1add858a49e2ab76b01ec0baa17c
+* author:	Metaversalarts (https://sketchfab.com/rogerbootsma)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Simple Tessellation glass dome" (https://sketchfab.com/3d-models/simple-tessellation-glass-dome-8baa1add858a49e2ab76b01ec0baa17c) by Metaversalarts (https://sketchfab.com/rogerbootsma) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
