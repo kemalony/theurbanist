@@ -11,6 +11,10 @@ TagManager:
   - road
   - healthcare
   - taskstuff
+  - water source
+  - stadyum
+  - fabrika
+  - air
   layers:
   - Default
   - TransparentFX
